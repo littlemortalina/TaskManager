@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 public class TasksTest {
     @Test
     public void ShouldFindMatchesInSimpleTaskPositive() { // позитивный тест для matches у простой задачи
@@ -53,7 +55,7 @@ public class TasksTest {
     public void ShouldFindMatchesInEpicPositive() { // позитивный тест для matches у эпика
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
-        Assertions.assertEquals(true, epic.matches("Хлеб"));
+        Assertions.assertEquals (true, epic.matches("Хлеб"));
     }
 
     @Test

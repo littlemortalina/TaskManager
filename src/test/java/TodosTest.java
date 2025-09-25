@@ -35,8 +35,7 @@ public class TodosTest {
         Todos todos = new Todos();
         todos.add(simpleTask);
         Task[] result = todos.search("Позвонить родителям");
-        Assertions.assertEquals(1, result.length);
-        Assertions.assertEquals(simpleTask, result[0]);
+        assertArrayEquals(new Task[]{simpleTask}, result);
     }
 
     @Test
@@ -49,7 +48,6 @@ public class TodosTest {
         todos.add(task2);
 
         Task[] result = todos.search("Позвонить");
-        assertEquals(2, result.length);
         assertArrayEquals(new Task[]{task1, task2}, result);
     }
 
@@ -62,9 +60,8 @@ public class TodosTest {
         );
         Todos todos = new Todos();
         todos.add(meeting);
-        Task[] result1 = todos.search("Выкатка 3й версии приложения");
-        Assertions.assertEquals(1, result1.length);
-        Assertions.assertEquals(meeting, result1[0]);
+        Task[] result = todos.search("Выкатка 3й версии приложения");
+        assertArrayEquals(new Task[]{meeting}, result);
     }
 
     @Test
@@ -77,8 +74,7 @@ public class TodosTest {
         Todos todos = new Todos();
         todos.add(meeting);
         Task[] result = todos.search("Приложение НетоБанка");
-        Assertions.assertEquals(1, result.length);
-        Assertions.assertEquals(meeting, result[0]);
+        assertArrayEquals(new Task[]{meeting}, result);
     }
 
     @Test
@@ -99,7 +95,6 @@ public class TodosTest {
         todos.add(meeting2);
 
         Task[] result = todos.search("Выкатка");
-        Assertions.assertEquals(2, result.length);
         assertArrayEquals(new Task[]{meeting1, meeting2}, result);
     }
 
@@ -121,7 +116,6 @@ public class TodosTest {
         todos.add(meeting2);
 
         Task[] result = todos.search("Приложение");
-        Assertions.assertEquals(2, result.length);
         assertArrayEquals(new Task[]{meeting1, meeting2}, result);
     }
 
@@ -132,8 +126,7 @@ public class TodosTest {
         Todos todos = new Todos();
         todos.add(epic);
         Task[] result = todos.search("Молоко");
-        Assertions.assertEquals(1, result.length);
-        Assertions.assertEquals(epic, result[0]);
+        assertArrayEquals(new Task[]{epic}, result);
     }
 
     @Test
@@ -146,7 +139,6 @@ public class TodosTest {
         todos.add(epic1);
         todos.add(epic2);
         Task[] result = todos.search("Молоко");
-        Assertions.assertEquals(2, result.length);
         assertArrayEquals(new Task[]{epic1, epic2}, result);
     }
 }
