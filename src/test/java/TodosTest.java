@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TodosTest {
     @Test
@@ -27,7 +26,7 @@ public class TodosTest {
 
         Task[] expected = {simpleTask, epic, meeting};
         Task[] actual = todos.findAll();
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -51,7 +50,7 @@ public class TodosTest {
 
         Task[] result = todos.search("Позвонить");
         assertEquals(2, result.length);
-        Assertions.assertArrayEquals(new Task[]{task1, task2}, result);
+        assertArrayEquals(new Task[]{task1, task2}, result);
     }
 
     @Test
@@ -101,7 +100,7 @@ public class TodosTest {
 
         Task[] result = todos.search("Выкатка");
         Assertions.assertEquals(2, result.length);
-        Assertions.assertArrayEquals(new Task[]{meeting1, meeting2}, result);
+        assertArrayEquals(new Task[]{meeting1, meeting2}, result);
     }
 
     @Test
@@ -123,7 +122,7 @@ public class TodosTest {
 
         Task[] result = todos.search("Приложение");
         Assertions.assertEquals(2, result.length);
-        Assertions.assertArrayEquals(new Task[]{meeting1, meeting2}, result);
+        assertArrayEquals(new Task[]{meeting1, meeting2}, result);
     }
 
     @Test
@@ -148,7 +147,7 @@ public class TodosTest {
         todos.add(epic2);
         Task[] result = todos.search("Молоко");
         Assertions.assertEquals(2, result.length);
-        Assertions.assertArrayEquals(new Task[]{epic1, epic2}, result);
+        assertArrayEquals(new Task[]{epic1, epic2}, result);
     }
 }
 
